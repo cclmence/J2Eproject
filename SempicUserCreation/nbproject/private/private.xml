@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/src/java/fr/uga/miashs/sempic/model/datalayer/PhotoDao.java</file>
+            <file>file:/C:/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/web/usersList.xhtml</file>
+            <file>file:/C:/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/src/java/fr/uga/miashs/sempic/model/datalayer/AlbumDao.java</file>
+            <file>file:/C:/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/web/albumList.xhtml</file>
+            <file>file:/C:/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/web/templates/sempic-template.xhtml</file>
+            <file>file:/C:/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/web/photoList.xhtml</file>
+            <file>file:/C:/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/src/java/fr/uga/sempic/jsf/beans/AuthManager.java</file>
+            <file>file:/C:/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/web/photo.xhtml</file>
+            <file>file:/C:/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/src/java/fr/uga/sempic/jsf/beans/UserView.java</file>
+            <file>file:/C:/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/src/java/fr/uga/sempic/jsf/beans/PhotoView.java</file>
+            <file>file:/C:/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/src/java/fr/uga/sempic/jsf/beans/AlbumView.java</file>
+        </group>
+    </open-files>
+</project-private>

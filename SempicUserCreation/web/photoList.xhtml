@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <body>
+        <ui:composition template="./templates/sempic-template.xhtml">
+            <ui:param name="top" value="Liste des photos"/>
+    
+            <ui:define name="content">
+                <h:form enctype="multipart/form-data">
+                    <p>
+                        <h2>
+                            <h:outputText value="Photo(s) de #{userView.selected.firstname}"/>
+                        </h2>
+                    </p>
+
+<!--                    <ui:repeat var="selected" value="#{albumView.getAlbums()}">
+                        <div class="photo">
+                            <h:form>
+                                <p>
+                                    <label outcome="selected">#{photo.name}</label>
+                                </p>
+                                <p>
+                                    <h:commandButton value="Editer" action="#{photoView.updatePhoto(selected)}" />
+                                </p>
+                                <p>
+                                    <h:commandButton value="Supprimer" action="#{photoView.deletePhoto(selected)}" />
+                                </p>
+                            </h:form>
+
+                        </div>
+                    </ui:repeat>-->
+                    <ui:repeat var="selected" value="#{albumView.getAlbums()}">
+                        <p>
+                            <h3>
+                                <h:outputText p:type="text" id="photoName" value="#{photoView.selected.name}"/>
+                            </h3>
+                        </p>
+                    </ui:repeat>
+               </h:form>
+                
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

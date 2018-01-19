@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <body>
+        <ui:composition template="./templates/sempic-template.xhtml">
+            <ui:param name="top" value="Création d'un compte"/>
+            <ui:param name="left" value="Saisir vos informations :"/>
+            
+            <ui:define name="content">
+                <h:form>
+<!--                    <p> 
+                        <label>Role :</label>
+                        <br/>
+                        <h:selectManyListbox value="#{userView.selected.roles}" required="required"> 
+                            <f:selectItem p:type="number" itemValue="0" itemLabel="Admin" /> 
+                            <f:selectItem p:type="number" itemValue="1" itemLabel="User" />
+                        </h:selectManyListbox>	
+                    </p>-->
+                        
+                    <p>
+                        <label>Nom :</label>
+                        <br/>
+                        <h:inputText p:type="text" id="lastName" value="#{userView.selected.lastname}" required="required"/>
+                    </p>
+                    
+                    <p>
+                        <label>Prénom :</label>
+                        <br/>
+                        <h:inputText p:type="text" id="firstName" value="#{userView.selected.firstname}" required="required"/>
+                    </p>
+                    
+                    <p>
+                        <label>Email :</label>
+                        <br/>
+                        <h:inputText p:type="email" id="email" value="#{userView.selected.email}" required="required"/>
+                    </p>
+                    
+                    <p>
+                        <label>Mot de passe :</label>
+                        <br/>
+                        <h:inputText p:type="password" id="password" value="#{userView.selected.password}" required="required"/>
+                    </p>                    
+                    
+                    <p>
+                        <h:commandButton value="Créer un compte" action="#{userView.create()}"/>
+                    </p>
+                    
+                    <p>
+                        <h:commandButton value="Se connecter" action="login?faces-redirect=true"/>
+                    </p>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

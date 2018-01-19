@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:oou="http://omnifaces.org/ui">
+    <body>
+        <ui:composition template="./templates/sempic-template.xhtml">
+            <ui:param name="top" value="Ajouter une photo"/>
+            <ui:param name="left" value="Saisir les informations concernant la photo :"/>
+            
+            <ui:define name="content">
+                <h:form enctype="multipart/form-data">
+                    
+                    <p>
+                        <label>Album :</label>
+                        <br/>
+                        <h:inputText p:type="text" id="albumTitle" value="#{albumView.selected.title}" required="required"/>
+                    </p>
+                    
+                    <p>
+                        <label>Titre :</label>
+                        <br/>
+                        <h:inputText p:type="text" id="photoName" value="#{photoView.selected.name}" required="required"/>
+                    </p>                  
+                  
+                    <p>
+                        <label>Lieu :</label>
+                        <br/>
+                        <h:inputText p:type="text" id="place" value="#{photoView.selected.place}" required="required"/>
+                    </p>
+                    
+                    <p>
+                        <label>Date :</label>
+                        <br/>
+                        <h:inputText p:type="text" id="photoDate" value="#{photoView.selected.photoDate}" required="required"/>
+                    </p>
+                    
+                    <p>
+                        <h:inputFile id="file" value="#{photoView.file}"/>
+                    </p>
+                    
+                    <!--<c:set value="#{authManager.login}" target="#{photoView.selected}" property="owner"/>-->
+                    
+                    <p>
+                        <h:commandButton value="Télécharger" action="#{photoView.create()}">
+
+                        </h:commandButton>
+                    </p>                    
+               
+                
+                    <br/>
+                
+                    <h2>
+                        <h:outputText value="Photo(s) de #{userView.selected.firstname}"/>
+                    </h2>
+                
+                    <br/>
+                    
+                    <ui:repeat value="#{photoView.getPhotos()}" var="photo">
+                        <h:graphicImage library="photos" name="#{photoView.file.submittedFileName}" width="150px" height="150px" />
+                        <h:outputText value="#{photoView.file}"/>
+                        <h:outputText value="resources/photos/#{photoView.file.submittedFileName}"/>
+                    </ui:repeat>
+               </h:form>
+                
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
