@@ -68,7 +68,7 @@ public class PhotoView implements Serializable {
             //Photo p = dao.getByName(selected.getName());
             
             //selected.setName(file.getSubmittedFileName());
-             uploadPhoto();
+            uploadPhoto();
             dao.create(selected);
 
         } catch (EJBException ex) {
@@ -89,8 +89,8 @@ public class PhotoView implements Serializable {
 
     public void uploadPhoto() {
 
-        Path pictureStore = Paths.get("/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/build/web/resources/photos");
-        Path thumbnailStore = Paths.get("/Users/Clémence/Documents/NetBeansProjects/SempicUserCreation/build/web/resources/photos/thumbnails");
+        Path pictureStore = Paths.get("/Users/Clémence/Documents/NetBeansProjects/J2Eproject/SempicUserCreation/build/web/resources/photos");
+        Path thumbnailStore = Paths.get("/Users/Clémence/Documents/NetBeansProjects/J2Eproject/SempicUserCreation/build/web/resources/photos/thumbnails");
 
         try {
             PictureStore ps = new PictureStore(pictureStore, thumbnailStore);

@@ -62,11 +62,14 @@
                 
                     <br/>
                     
-                    <ui:repeat value="#{photoView.getPhotos()}" var="photo">
-                        <h:graphicImage library="photos" name="#{photoView.file.submittedFileName}" width="150px" height="150px" />
-                        <h:outputText value="#{photoView.file}"/>
-                        <h:outputText value="resources/photos/#{photoView.file.submittedFileName}"/>
-                    </ui:repeat>
+                    <div>
+                        <!--<ui:repeat value="#{photoView.getPhotos()}" var="photo">-->-->
+                            <h:graphicImage library="photos" name="#{photoView.file.submittedFileName}" width="150px" height="150px" />
+                            <!--<h:outputText value="#{photoView.file}"/>-->
+                            <br/>
+                            <h:outputText value="#{photoView.file.submittedFileName}"/>
+                        <!--</ui:repeat>-->
+                    </div>    
                </h:form>
                 
             </ui:define>

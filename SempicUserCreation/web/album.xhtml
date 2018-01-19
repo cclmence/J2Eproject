@@ -18,6 +18,10 @@
                         <br/>
                         <h:inputText p:type="text" id="albumTitle" value="#{albumView.selected.title}" required="required"/>
                         <br/>
+                        <label>ID de l'album :</label>
+                        <br/>
+                        <h:inputText p:type="text" id="albumId" value="#{albumView.selected.id}" required="required"/>
+                        <br/>
                         <br/>
                         <h:commandButton value="Créer" action="#{albumView.create()}"/>
                     </p>                                

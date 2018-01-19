@@ -31,19 +31,19 @@ public class AlbumView implements Serializable {
     private AlbumDao dao;
     
     private Album currentAlbum;
-    private String albId;
+//    private String albId;
 
     public String getAlbumName() {
         return currentAlbum.getTitle();
     }
 
-    public String getAlbId() {
-        return albId;
-    }
-
-    public void setAlbId(String albId) {
-        this.albId = albId;
-    }
+//    public String getAlbId() {
+//        return albId;
+//    }
+//
+//    public void setAlbId(String albId) {
+//        this.albId = albId;
+//    }
     private Part file;
 
     public Part getFile() {
@@ -72,9 +72,9 @@ public class AlbumView implements Serializable {
     public String create() {
         try {
            // Album alb = new Album();
-//           
+           
 //            FacesContext context = FacesContext.getCurrentInstance();
-            Album a = dao.getByTitle(selected.getTitle());
+//            Album a = dao.getByTitle(selected.getTitle());
             dao.create(selected);
         } catch (EJBException ex) {
             if (ex.getCause() instanceof ConstraintViolationException) {

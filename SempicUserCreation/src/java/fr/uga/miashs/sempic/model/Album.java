@@ -18,8 +18,8 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @NamedQueries({
-    @NamedQuery(name="Album.findAllOwned",
-                query="SELECT a FROM Album a WHERE a.owner=:owner"),
+    @NamedQuery(name="Album.getTitle()",
+                query="SELECT a FROM Album a WHERE a.title=:title"),
 })
 public class Album implements Serializable {
 
@@ -33,20 +33,24 @@ public class Album implements Serializable {
     @OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
     private Collection<Photo> photos;
     
-    @NotNull
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private SempicUser owner;
+//    @NotNull
+//    @ManyToOne(cascade = CascadeType.PERSIST)
+//    private SempicUser owner;
     
-    @ManyToMany
-    private Set<SempicUser> sharedWith;
+//    @ManyToMany
+//    private Set<SempicUser> sharedWith;
 
 //    public Album(SempicUser connectedUser) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
-	
+//	
 //    public Album(SempicUser owner) {
 //	this.owner=owner;
 //    }
+    
+    public Album(){
+        
+    }
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -57,10 +61,10 @@ public class Album implements Serializable {
     public Collection<Photo> getPhotos() { return photos; }
     public void setPhotos(Collection<Photo> photos) { this.photos = photos; }
     
-    public SempicUser getOwner() { return owner; }
-    public void setOwner(SempicUser owner) { this.owner = owner; }
+//    public SempicUser getOwner() { return owner; }
+//    public void setOwner(SempicUser owner) { this.owner = owner; }
     
-    public Set<SempicUser> getSharedWith() { return sharedWith; }
+//    public Set<SempicUser> getSharedWith() { return sharedWith; }
     
     public Set<String> getPhotosName() {
 	Set<String> photosName = new HashSet<String>();
@@ -69,14 +73,14 @@ public class Album implements Serializable {
 	return photosName;
     }
 
-    public SempicUser shareAlbum(SempicUser user){
-	if(sharedWith == null)
-            sharedWith = new HashSet<SempicUser>();
-	sharedWith.add(user);
-	for (SempicUser a : sharedWith)
-            System.out.println("sharedWith : " + a.getFirstname());
-	return user;
-	}
+//    public SempicUser shareAlbum(SempicUser user){
+//	if(sharedWith == null)
+//            sharedWith = new HashSet<SempicUser>();
+//	sharedWith.add(user);
+//	for (SempicUser a : sharedWith)
+//            System.out.println("sharedWith : " + a.getFirstname());
+//	return user;
+//	}
 	
     public Photo addPhoto(Photo photo){
 	if(photos == null)

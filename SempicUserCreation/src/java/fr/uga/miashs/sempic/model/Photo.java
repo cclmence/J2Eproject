@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.servlet.http.Part;
 import javax.validation.constraints.NotNull;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
 public class Photo implements Serializable {
@@ -21,7 +23,7 @@ public class Photo implements Serializable {
     @Column(unique = true)
     private String name;
     
-    //@NotNull
+    @NotNull
     @ManyToOne
     private Album album;
     
